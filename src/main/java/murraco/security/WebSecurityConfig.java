@@ -62,6 +62,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .ignoring()
         .antMatchers("/h2-console/**/**");;
   }
+  
+  @Bean
+  @Override
+  public AuthenticationManager authenticationManagerBean() throws Exception {
+    return super.authenticationManagerBean();
+  }
 
   @Bean
   public PasswordEncoder passwordEncoder() {
